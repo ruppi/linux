@@ -52,6 +52,7 @@
 
 struct usb3503 {
 	enum usb3503_mode	mode;
+	bool refclk_is_secondary;
 	struct i2c_client	*client;
 	u8	port_off_mask;
 	int	gpio_intn;
@@ -226,11 +227,14 @@ static int usb3503_probe(struct i2c_client *i2c, const struct i2c_device_id *id)
 			return -EPROBE_DEFER;
 		of_property_read_u32(np, "initial-mode", &mode);
 		hub->mode = mode;
+		hub->refclk_is_secondary = of_property_read_bool(np, "secondary-refclk");
 	}
 
 	if (gpio_is_valid(hub->gpio_intn)) {
+		int gpiof;
+		gpiof = hub->refclk_is_secondary ? GPIOF_OUT_INIT_LOW : GPIOF_OUT_INIT_HIGH;
 		err = gpio_request_one(hub->gpio_intn,
-				GPIOF_OUT_INIT_HIGH, "usb3503 intn");
+				gpiof, "usb3503 intn");
 		if (err) {
 			dev_err(&i2c->dev,
 					"unable to request GPIO %d as connect pin (%d)\n",
