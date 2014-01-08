@@ -461,4 +461,28 @@
     watchdog@101D0000 {
         timeout-sec = <32>;
     };
+
+    leds {
+        compatible = "gpio-leds";
+        hearbeat {
+            label = "blue:heartbeat";
+            gpios = <&gpb2 2 0>;
+            default-state = "off";
+            linux,default-trigger = "heartbeat";
+        };
+
+        eMMC {
+            label = "green:activity";
+            gpios = <&gpb2 1 0>;
+            default-state = "off";
+            linux,default-trigger = "mmc0";
+        };
+
+        microSD {
+            label = "red:activity";
+            gpios = <&gpx2 3 0>;
+            default-state = "off";
+            linux,default-trigger = "mmc1";
+        };
+    };
 };
