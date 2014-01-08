@@ -397,7 +397,7 @@
 		lcd-dimensions = <256 144>;
 	};
 
-	display-port-controller {
+/*	display-port-controller {
 		samsung,dp-display = <&lcd_dp0>;
 		samsung,dp-frame-rate = <60>;
 		samsung,color-space = <0>;
@@ -407,6 +407,7 @@
 		samsung,link-rate = <0x0a>;
 		samsung,lane-count = <4>;
 	};
+*/
 
 	codec@11000000 {
 		samsung,mfc-r = <0x43000000 0x800000>;
