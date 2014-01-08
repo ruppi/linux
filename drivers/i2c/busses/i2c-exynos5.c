@@ -766,10 +766,10 @@ static int exynos5_i2c_probe(struct platform_device *pdev)
 
 	of_i2c_register_devices(&i2c->adap);
 	platform_set_drvdata(pdev, i2c);
-
-	clk_disable_unprepare(i2c->clk);
-	pm_runtime_mark_last_busy(i2c->dev);
-	pm_runtime_put_autosuspend(i2c->dev);
+/* FIX ME: Clock_disable_unprepare comment temporarily*/
+//	clk_disable_unprepare(i2c->clk);
+//	pm_runtime_mark_last_busy(i2c->dev);
+//	pm_runtime_put_autosuspend(i2c->dev);
 
 	return 0;
 
