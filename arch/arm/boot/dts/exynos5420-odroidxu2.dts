@@ -171,6 +171,8 @@
 					regulator-max-microvolt = <1300000>;
 					regulator-always-on;
 					regulator-boot-on;
+					regulator-op-mode = <1>;
+					regulator-ramp-delay = <12000>;
 				};
 
 				buck2_reg: BUCK2 {
@@ -179,6 +181,8 @@
 					regulator-max-microvolt = <1500000>;
 					regulator-always-on;
 					regulator-boot-on;
+					regulator-op-mode = <1>;
+					regulator-ramp-delay = <12000>;
 				};
 
 				buck3_reg: BUCK3 {
@@ -188,6 +192,7 @@
 					regulator-always-on;
 					regulator-boot-on;
                     regulator-op-mode = <2>;
+					regulator-ramp-delay = <12000>;
 				};
 
 				buck4_reg: BUCK4 {
@@ -196,6 +201,8 @@
 					regulator-max-microvolt = <1400000>;
 					regulator-always-on;
 					regulator-boot-on;
+					regulator-op-mode = <1>;
+					regulator-ramp-delay = <12000>;
 				};
 
 				buck6_reg: BUCK6 {
@@ -204,6 +211,8 @@
 					regulator-max-microvolt = <1500000>;
 					regulator-always-on;
 					regulator-boot-on;
+					regulator-op-mode = <1>;
+					regulator-ramp-delay = <12000>;					
 				};
 
 				buck10_reg: BUCK10 {
