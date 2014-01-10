@@ -34,6 +34,13 @@
             samsung,pin-pud = <0>;
             samsung,pin-drv = <0>;
         };
+
+        dp_hpd: dp-hpd {
+			samsung,pins = "gpx0-7";
+			samsung,pin-function = <0>;
+			samsung,pin-pud = <3>;
+			samsung,pin-drv = <0>;
+	    };
     };
 
 	watchdog {
@@ -397,7 +404,10 @@
 		samsung,color-depth = <1>;
 		samsung,link-rate = <0x0a>;
 		samsung,lane-count = <4>;
-	};
+		samsung,hpd-gpio = <&gpx0 7 0>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&dp_hpd>;
+    };
 
 	codec@11000000 {
 		samsung,mfc-r = <0x43000000 0x800000>;
