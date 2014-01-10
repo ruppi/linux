@@ -325,6 +325,12 @@
 					regulator-min-microvolt = <1000000>;
 					regulator-max-microvolt = <1000000>;
 				};
+
+				ldo28_reg: LDO28 {
+					regulator-name = "dp_p3v3";
+					regulator-min-microvolt = <3300000>;
+					regulator-max-microvolt = <3300000>;
+				};
 			};
 
             s2mps11_rtc: rtc {
