@@ -328,6 +328,7 @@
 					regulator-name = "dp_p3v3";
 					regulator-min-microvolt = <3300000>;
 					regulator-max-microvolt = <3300000>;
+					regulator-always-on;
 				};
 			};
 
@@ -396,8 +397,14 @@
 	};
 
 	lcd_dp0: lcd_panel0 {
+/*
 		lcd-htiming = <80 48 32 2560>;
 		lcd-vtiming = <16 8 6 1600>;
+		lcd-dimensions = <256 144>;
+*/
+    /* AOC I2269V 22" */
+		lcd-htiming = <172 60 80 1920>;
+		lcd-vtiming = <10 10 10 1080>;
 		lcd-dimensions = <256 144>;
 	};
 
