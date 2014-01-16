@@ -428,7 +428,7 @@
 		lcd-dimensions = <256 144>;
 	};
 
-/*	display-port-controller {
+	display-port-controller {
 		samsung,dp-display = <&lcd_dp0>;
 		samsung,dp-frame-rate = <60>;
 		samsung,color-space = <0>;
