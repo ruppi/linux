@@ -326,12 +326,17 @@
 					regulator-name = "vdd_mifs";
 					regulator-min-microvolt = <900000>;
 					regulator-max-microvolt = <1300000>;
+					regulator-always-on;
+					regulator-boot-on;
+					regulator-ramp-delay = <12000>;					
 				};
 
 				ldo27_reg: LDO27 {
 					regulator-name = "vdd_g3ds";
 					regulator-min-microvolt = <1000000>;
 					regulator-max-microvolt = <1000000>;
+					regulator-always-on;
+					
 				};
 
 				ldo28_reg: LDO28 {
@@ -339,6 +344,8 @@
 					regulator-min-microvolt = <3300000>;
 					regulator-max-microvolt = <3300000>;
 					regulator-always-on;
+					regulator-boot-on;
+					regulator-ramp-delay = <12000>;					
 				};
 			};
 
@@ -416,19 +423,13 @@
         samsung-rgb-dithpos = <6 6 6>;
     };
 
-	lcd_dp0: lcd_panel0 {
-/*
-		lcd-htiming = <80 48 32 2560>;
-		lcd-vtiming = <16 8 6 1600>;
-		lcd-dimensions = <256 144>;
-*/
-    /* AOC I2269V 22" */
+/*	lcd_dp0: lcd_panel0 {
 		lcd-htiming = <172 60 80 1920>;
 		lcd-vtiming = <10 10 10 1080>;
 		lcd-dimensions = <256 144>;
 	};
-
-	display-port-controller {
+*/
+/*	display-port-controller {
 		samsung,dp-display = <&lcd_dp0>;
 		samsung,dp-frame-rate = <60>;
 		samsung,color-space = <0>;
@@ -441,6 +442,7 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&dp_hpd>;
     };
+*/
 
 	codec@11000000 {
 		samsung,mfc-r = <0x43000000 0x800000>;
