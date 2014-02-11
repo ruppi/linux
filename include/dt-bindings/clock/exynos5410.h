@@ -53,6 +53,9 @@
 #define CLK_GSCL2 362
 #define CLK_GSCL3 363
 #define CLK_GSCL4 364
+#define CLK_MFC 401
+#define CLK_SMMU_MFCL 402
+#define CLK_SMMU_MFCR 403
 
 /* mux clocks */
 #define CLK_MOUT_HDMI 500
